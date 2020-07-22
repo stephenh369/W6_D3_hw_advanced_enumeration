@@ -4,8 +4,10 @@ const AnagramFinder = function (word) {
 
 AnagramFinder.prototype.findAnagrams = function (otherWords) {
     return otherWords.filter(word => {
-       return word.split('').every(letter => this.word.split('').includes(letter));
-        
+       const anagram =  word.split('').every(letter => this.word.split('').includes(letter));
+       const result = anagram && this.word.length === word.length;
+
+       return result;
     });
 };
 
